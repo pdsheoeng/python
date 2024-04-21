@@ -1,0 +1,637 @@
+<MenuScreen>:
+    name:'menu'
+    BoxLayout:
+        font_size: dp(80)
+        orientation: 'vertical'
+        Label:
+            markup: True
+            text:'      计  算  训  练[sub]--pdsheoeng[/sub]'
+            size: self.texture_size
+            font_size:30
+            color:0.4,0.4,1,1
+        Button:
+            text:'加  法'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='Addition'
+        Button:
+            text:'减  法'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='Subtraction'
+        Button:
+            text:'乘  法'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='Multiplication'
+        Button:
+            text:'除  法'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='Division'
+        Button:
+            text:'历史记录'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='LS'
+
+<LogScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text:'做题数量达到一万解锁'
+            font_size:40
+            color:0.4,0.4,1,1
+        Label:
+            text:'2022/9/6完成 耗时2天 '
+            font_size:40
+            color:0.4,0.4,1,1
+        Label:
+            text:'Thank you for using it'
+            font_size:40
+            color:0.4,0.4,1,1
+    
+
+<AdditionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text:'加法初级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='A1'
+        Button:
+            text:'加法中级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='A2'
+        Button:
+            text:'加法高级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='A3'
+        Button:
+            text:'返回'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='menu'
+
+<SubtractionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text:'减法初级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='S1'
+        Button:
+            text:'减法中级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='S2'
+        Button:
+            text:'减法高级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='S3'
+        Button:
+            text:'返回'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='menu'
+    
+
+<MultiplicationScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text:'乘法初级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='M1'
+        Button:
+            text:'乘法中级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='M2'
+        Button:
+            text:'乘法高级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='M3'
+        Button:
+            text:'返回'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='menu'
+
+<DivisionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text:'除法初级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='D1'
+        Button:
+            text:'除法中级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='D2'
+        Button:
+            text:'除法高级'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='D3'
+        Button:
+            text:'返回'
+            font_size:30
+            color:0.4,0.4,1,1
+            background_color:0,0,0,1
+            on_press:
+                root.manager.current='menu'
+
+<Addition1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A1
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A1.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Addition2Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A1
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A1.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Addition3Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Subtraction1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Subtraction2Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Subtraction3Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Multiplication_1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Multiplication_2Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Multiplication_3Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Division_1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Division_2Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
+<Division_3Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id:time
+            markup:True
+            text:'所用时间：[b]00[/b]:00:00'
+            font_size:30
+        Label:
+            font_size:30
+            id:text_update
+            text:root.record
+        Label:
+            id:labelA
+            font_size:30
+            text:root.asking
+        TextInput:
+            font_size:30
+            id:A2
+            text:''
+        Button:
+            id:start
+            font_size:30
+            text:root.word
+            background_color:0.2,0.2,0.8,1
+            on_press:
+                root.yorn(A2.text)
+                root.begin()
+                root.start_on_stop()
+        Button:
+            id:x2
+            font_size:30
+            background_color:0,0,0,1
+            text:'点击蓝色开始，点此处结算'
+            on_press:
+                root.restartscreen()
+
